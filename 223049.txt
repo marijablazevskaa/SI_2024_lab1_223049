@@ -1,0 +1,158 @@
+4. Најпрво креаирам локален репозиториум 
+mkdir SI_2024_lab1_223049
+cd SI_2024_lab1_223049
+следно го иницијализирам да биде Git директориум 
+git init
+
+5.Следно, го поврзувам локалниот репозиториум со оддалечниот репозиториум со командата:
+git remote add origin https://github.com/marijablazevskaa/SI_2024_lab1_223049.git
+
+за проверка дали е поврзано ја користам командата:
+git remote -v
+излезот е:
+origin  https://github.com/marijablazevskaa/SI_2024_lab1_223049 (fetch)
+origin  https://github.com/marijablazevskaa/SI_2024_lab1_223049 (push)
+
+6. Датотеката README.md ја додавам на следниот начин
+git add README.md
+git commit -m "Initial commit"
+
+7. Во следниот чекор ги превземав фајловите и ги сместив и додадов во репозитотиумот, и потоа им направив commit
+C:\Users\Asus\SI_2024_lab1_223049>git add SILab1Main.java SILab1_1.java SILab1_2.java
+C:\Users\Asus\SI_2024_lab1_223049>git commit -m "Add starter code"
+[master 10236e5] Add starter code
+ 3 files changed, 47 insertions(+)
+ create mode 100644 SILab1Main.java
+ create mode 100644 SILab1_1.java
+ create mode 100644 SILab1_2.java
+
+8. Потоа ги синхронизирам сите гранки со оддалечниот репозиториум
+C:\Users\Asus\SI_2024_lab1_223049>git branch -M master
+
+C:\Users\Asus\SI_2024_lab1_223049>git push -u origin master
+
+9. Отварам две гранки со следната команда
+C:\Users\Asus\SI_2024_lab1_223049>git branch bug1
+
+C:\Users\Asus\SI_2024_lab1_223049>git branch bug2
+
+10. За да се префрлам на гранката bug1 ја користам командата
+C:\Users\Asus\SI_2024_lab1_223049>git checkout bug1
+
+11. Следно ја поправам грешката во методот filterOddLengthStrings
+C:\Users\Asus\SI_2024_lab1_223049>notepad SILab1_1.java
+
+C:\Users\Asus\SI_2024_lab1_223049>git add SILab1_1.java
+
+C:\Users\Asus\SI_2024_lab1_223049>git commit -m "Ја поправив грешката во методот filterOddLengthStrings"
+
+12. Се префрлам на гранката bug2
+C:\Users\Asus\SI_2024_lab1_223049>git checkout bug2
+
+13. Повторно ја менувам грешката во методот makeBigStringFrom
+C:\Users\Asus\SI_2024_lab1_223049>notepad SILab1_2.java
+
+C:\Users\Asus\SI_2024_lab1_223049>git add SILab1_2.java
+
+C:\Users\Asus\SI_2024_lab1_223049>git commit -m "Ја поправив грешката во методо"
+
+14. Се враќам на гранката bug1
+C:\Users\Asus\SI_2024_lab1_223049>git checkout bug1
+
+15. Додавам повик 
+C:\Users\Asus\SI_2024_lab1_223049>notepad SILab1Main.java
+
+C:\Users\Asus\SI_2024_lab1_223049>git add SILab1Main.java
+
+C:\Users\Asus\SI_2024_lab1_223049>git commit -m "Call method filterOddLengthStr
+ings in main class"
+
+16. Се префрлам на гранката bug2
+C:\Users\Asus\SI_2024_lab1_223049>git checkout bug2
+
+17. Повторно додавам повик
+C:\Users\Asus\SI_2024_lab1_223049>notepad SILab1Main.java
+
+C:\Users\Asus\SI_2024_lab1_223049>git add SILab1Main.java
+
+C:\Users\Asus\SI_2024_lab1_223049>git commit -m "Call method makeBigStringFrom in main class"
+
+18. Во следниот чекор правам синхорнизациа на сите гранки со оддалечениот репозиториум
+
+C:\Users\Asus\SI_2024_lab1_223049>git push --all origin
+
+19. Се префрлам на гранката master
+C:\Users\Asus\SI_2024_lab1_223049>git checkout master
+
+20. Ја спојувам гранката bug1 со master
+C:\Users\Asus\SI_2024_lab1_223049>git merge bug1
+Updating 10236e5..3b74d90
+Fast-forward
+ SILab1Main.java | 2 +-
+ SILab1_1.java   | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+21. Ги синхорнизирам гранките
+
+C:\Users\Asus\SI_2024_lab1_223049>git push --all origin
+
+22. Се префрлам на гранката bug2
+
+C:\Users\Asus\SI_2024_lab1_223049>git checkout bug2
+
+23. Во следниот чекор правам rebase спрема гранката master
+
+C:\Users\Asus\SI_2024_lab1_223049>git rebase master
+Auto-merging SILab1Main.java
+CONFLICT (content): Merge conflict in SILab1Main.java
+error: could not apply cd18fc8... Call method makeBigStringFrom in main class
+hint: Resolve all conflicts manually, mark them as resolved with
+hint: "git add/rm <conflicted_files>", then run "git rebase --continue".
+hint: You can instead skip this commit: run "git rebase --skip".
+hint: To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply cd18fc8... Call method makeBigStringFrom in main class
+
+Се појави конфликт, за да го средам овој конфликт во фајлот SILab1Main.java од двата повици кои се во линија 16 да го оставам само System.out.println(SILab1_2.makeBigStringFrom(list));}
+C:\Users\Asus\SI_2024_lab1_223049>notepad SILab1Main.java
+
+C:\Users\Asus\SI_2024_lab1_223049>git add SILab1Main.java
+
+C:\Users\Asus\SI_2024_lab1_223049>git rebase --continue
+[detached HEAD 1d53b48] Call method makeBigStringFrom in main class
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+Successfully rebased and updated refs/heads/bug2.
+
+24. Се префрлам на master
+C:\Users\Asus\SI_2024_lab1_223049>git checkout master
+Switched to branch 'master'
+
+25. Во следниот чекор ја споив гранката bug2 кон master
+C:\Users\Asus\SI_2024_lab1_223049>git merge bug2
+Updating 3b74d90..1d53b48
+Fast-forward
+ SILab1Main.java | 4 +++-
+ SILab1_2.java   | 2 +-
+ 2 files changed, 4 insertions(+), 2 deletions(-)
+
+26. Правам синхорнизација
+C:\Users\Asus\SI_2024_lab1_223049>git push --all origin
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (6/6), 746 bytes | 373.00 KiB/s, done.
+Total 6 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 3 local objects.
+To https://github.com/marijablazevskaa/SI_2024_lab1_223049
+   3b74d90..1d53b48  master -> master
+ ! [rejected]        bug2 -> bug2 (non-fast-forward)
+error: failed to push some refs to 'https://github.com/marijablazevskaa/SI_2024_lab1_223049'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+27.C:\Users\Asus\SI_2024_lab1_223049>git push --force origin bug2
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/marijablazevskaa/SI_2024_lab1_223049
+ + cd18fc8...1d53b48 bug2 -> bug2 (forced update)

@@ -1,0 +1,35 @@
+commit 1d53b4817f22af910517b1cf9ad7c877e98be184
+Author: marijablazevskaa <138380083+marijablazevskaa@users.noreply.github.com>
+Date:   Sat Apr 13 18:02:55 2024 +0200
+
+    Call method makeBigStringFrom in main class
+
+commit 41f99ba6dc7f5710fa1d10130e55d86e975ec294
+Author: marijablazevskaa <138380083+marijablazevskaa@users.noreply.github.com>
+Date:   Sat Apr 13 16:47:47 2024 +0200
+
+    Ја поправив грешката во методо
+
+commit 3b74d906209285a1c31d2e44adca86c18aa3b0ba
+Author: marijablazevskaa <138380083+marijablazevskaa@users.noreply.github.com>
+Date:   Sat Apr 13 16:51:34 2024 +0200
+
+    Call method filterOddLengthStr
+
+commit b648388ec8681c5589cf1080271ebbb9b4751e94
+Author: marijablazevskaa <138380083+marijablazevskaa@users.noreply.github.com>
+Date:   Sat Apr 13 16:46:54 2024 +0200
+
+    Ја поправив грешката во методот filterOddLengthStrings
+
+commit 10236e57c6eb4cd8676d283079fb016884dde9fc
+Author: marijablazevskaa <138380083+marijablazevskaa@users.noreply.github.com>
+Date:   Sat Apr 13 16:02:19 2024 +0200
+
+    Add starter code
+
+commit 844fdcb0fb671fd2fd34174b878c5795b199728f
+Author: marijablazevskaa <138380083+marijablazevskaa@users.noreply.github.com>
+Date:   Sat Apr 13 12:20:00 2024 +0200
+
+    Initial commit
